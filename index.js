@@ -39,6 +39,7 @@ sql.connect(err => {
 app.listen(process.env.PORT || 3000);
 
 app.get("/", (req, res) => {
+  console.log("asdasdasdasdasdas");
   res.send("Server chạy ngon lành.");
 });
 
