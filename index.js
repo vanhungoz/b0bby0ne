@@ -35,6 +35,7 @@ sql.connect(err => {
     return;
   }
   console.log("SQL connect Successfully");
+  console.log("Port", process.env.PORT);
 });
 
 app.listen(process.env.PORT || 3000);
