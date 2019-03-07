@@ -18,31 +18,31 @@ app.use(
 );
 var server = http.createServer(app);
 
-// const mysql = require("mysql");
+const mysql = require("mysql");
 
-// var sqlStatus = 0;
-// var sql = mysql.createConnection({
-//   host: "sql12.freemysqlhosting.net",
-//   port: 3306,
-//   user: "sql12282122",
-//   password: "Vyz2cP8u5A",
-//   database: "sql12282122"
-// });
+var sqlStatus = 0;
+var sql = mysql.createConnection({
+  host: "sql12.freemysqlhosting.net",
+  port: 3306,
+  user: "sql12282122",
+  password: "Vyz2cP8u5A",
+  database: "sql12282122"
+});
 
-// sql.connect(err => {
-//   if (err) {
-//     console.log("error", err);
-//     sqlStatus = -1;
-//     return;
-//   }
-//   sqlStatus = 1;
-//   console.log("SQL connect Successfully");
-// });
+sql.connect(err => {
+  if (err) {
+    console.log("error", err);
+    sqlStatus = -1;
+    return;
+  }
+  sqlStatus = 1;
+  console.log("SQL connect Successfully");
+});
 
 app.listen(process.env.PORT || 3000);
 
 app.get("/", (req, res) => {
-  res.send("Server chạy ngon lành.");
+  res.send("Server chạy ngon lành." + sqlStatus.toString());
 });
 
 app.get("/webhook", (req, res) => {
