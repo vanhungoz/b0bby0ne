@@ -3,7 +3,6 @@ var http = require("http");
 var bodyParser = require("body-parser");
 var express = require("express");
 var request = require("request");
-var router = express();
 
 const ACCESS_TOKEN =
   "EAAcT61HPKDoBAC4pOkZAhtQXoLgXGWZBOcVO2JS4SITB5ZAoto0RYBoZClJHM6meUrenKcZCdD6TX32sIRGTZBNKZAecDu5cUFN3gTYvzLlo3TOc6HJbDnuBaufUvAF7awC1trzK9wcUUn7rXDC7nZBSphHO7loz9UmfYL44Y8bgGQZDZD";
@@ -38,7 +37,7 @@ sql.connect(err => {
   console.log("Port", process.env.PORT);
 });
 
-app.listen(process.env.PORT || 5000, port => {
+server.listen(process.env.PORT || 5000, port => {
   console.log("PORT", port);
 });
 
